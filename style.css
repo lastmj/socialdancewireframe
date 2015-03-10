@@ -1,0 +1,95 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    height: 45px;
+    white-space: nowrap;
+    border: 1px solid black;
+}
+
+#logoImageContainer {
+    display:inline-block;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+	font-size: 2em;
+}
+
+#loginDiv {
+    display: inline-block;
+    position: absolute;
+    right: 100px;
+    top: 15px;
+	cursor: pointer;
+}
+
+#signupDiv {
+    display: inline-block;
+    position:absolute;
+    right: 20px;
+    top: 15px;
+	cursor: pointer;
+}
+
+.loginInput
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top:10px;
+	border: solid 1px black;
+	font-size:1.5em;
+    padding: 10px;
+}
+
+.authenticationForm {
+    position: absolute;
+    z-index:201;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    width: 400px;
+    background-color: white;
+    padding:25px;
+	border: solid 1px;
+}
+
+.submitButton
+{
+    display: block;
+	background:white;
+	border:none;
+	cursor:pointer;
+	font-size:1.5em;
+	margin-top:25px;
+    margin-left: auto;
+    margin-right:auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+	border: 1px solid black;
+}
+
+.greyOut {
+    position:fixed;
+    opacity:.5;
+    background-color:#FDFDFD;
+    z-index:100;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}

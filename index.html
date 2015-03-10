@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+	</head>
+
+	<body>
+		<div id="greyOut" class="greyOut hide"></div>
+		<div class="nav">
+			<a href="index.html" id="logoImageContainer">
+				Logo
+			</a>
+			<div id="loginDiv">
+				Log In
+			</div>
+			<div id="signupDiv">
+				Sign Up
+			</div>
+		</div>
+		
+		<form id="loginForm" class="authenticationForm hide">
+			<input type="text" class="loginInput" placeholder="username">
+			<input type="password" class="loginInput" placeholder="password">
+			
+			<input id="loginSubmitButton" type="button" class="submitButton" value="Log In">
+		</form>
+		
+		<form id="signupForm" class="authenticationForm hide">
+			<input type="text" class="loginInput" placeholder="username">
+			<input type="password" class="loginInput" placeholder="password">
+			
+			<input id="signupSubmitButton" type="button" class="submitButton" value="Sign Up">
+		</form>
+		
+		<script>
+			initLogin();
+			initSignup();
+			
+			var greyOut = document.getElementById('greyOut');
+			
+			function initLogin() {
+				var loginDiv = document.getElementById('loginDiv');
+				var loginForm = document.getElementById('loginForm');
+				
+				loginDiv.addEventListener('click', function() {
+					if(loginForm.className.indexOf('hide') === -1) {
+						loginForm.className = loginForm.className.replace('show', 'hide');
+						greyOut.className = greyOut.className.replace('show', 'hide');
+					}
+					else {
+						loginForm.className = loginForm.className.replace('hide', 'show');
+						greyOut.className = greyOut.className.replace('hide', 'show');
+					}
+				});
+				
+				var loginSubmitButton = document.getElementById('loginSubmitButton');
+				
+				loginSubmitButton.addEventListener('click', function() {
+					window.location = 'index.html';
+				});
+			}
+			
+			function initSignup() {
+				var signupDiv = document.getElementById('signupDiv');
+				var signupForm = document.getElementById('signupForm');
+				
+				signupDiv.addEventListener('click', function() {
+					if(signupForm.className.indexOf('hide') === -1) {
+						signupForm.className = signupForm.className.replace('show', 'hide');
+						greyOut.className = greyOut.className.replace('show', 'hide');
+					}
+					else {
+						signupForm.className = signupForm.className.replace('hide', 'show');
+						greyOut.className = greyOut.className.replace('hide', 'show');
+					}
+				});
+				
+				var signupSubmitButton = document.getElementById('signupSubmitButton');
+				
+				signupSubmitButton.addEventListener('click', function() {
+					window.location = 'index.html';
+				});
+			}
+		</script>
+	</body>
+
+</html>
