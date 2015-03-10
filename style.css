@@ -14,7 +14,7 @@ body {
     position: absolute;
     top: 2px;
     left: 10px;
-	font-size: 2em;
+    font-size: 2em;
 }
 
 #loginDiv {
@@ -22,7 +22,7 @@ body {
     position: absolute;
     right: 100px;
     top: 15px;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #signupDiv {
@@ -30,7 +30,7 @@ body {
     position:absolute;
     right: 20px;
     top: 15px;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .loginInput
@@ -38,9 +38,9 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-	margin-top:10px;
-	border: solid 1px black;
-	font-size:1.5em;
+    margin-top:10px;
+    border: solid 1px black;
+    font-size:1.5em;
     padding: 10px;
 }
 
@@ -55,24 +55,24 @@ body {
     width: 400px;
     background-color: white;
     padding:25px;
-	border: solid 1px;
+    border: solid 1px;
 }
 
 .submitButton
 {
     display: block;
-	background:white;
-	border:none;
-	cursor:pointer;
-	font-size:1.5em;
-	margin-top:25px;
+    background:white;
+    border:none;
+    cursor:pointer;
+    font-size:1.5em;
+    margin-top:25px;
     margin-left: auto;
     margin-right:auto;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-	border: 1px solid black;
+    border: 1px solid black;
 }
 
 .greyOut {
@@ -87,9 +87,40 @@ body {
 }
 
 .show {
-	display: block;
+    display: block;
 }
 
 .hide {
-	display: none;
+    display: none;
+}
+
+.calendarColumn {
+    display: inline-block;
+    width: 16.66666666%;
+    height: 500px;
+    border: solid 1px black;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.calendarRow {
+    display: block;
+    height: 10%;
+    border: 1px solid black;
+}
+
+#calendar {
+    position: absolute;
+    box-sizing: border-box;
+    width: 60%;
+    height: 500px;
+    border: solid 1px black;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    margin-top: 5%;
+    min-width: 750px;
 }
