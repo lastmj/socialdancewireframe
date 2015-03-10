@@ -217,7 +217,7 @@
 				<div class="calendarRow">
 					2:00pm - 3:00pm
 				</div>
-				<div class="calendarRow">
+				<div id="submitRequest" class="calendarRow">
 					3:00pm - 4:00pm
 				</div>
 				<div class="calendarRow">
@@ -464,7 +464,7 @@
 		</div>
 		
 		<div id="mainButtonsContainer">
-			<button id="allMatchesButton" class="mainButton">All Matches Button</button>
+			<button id="allMatchesButton" class="mainButton">All Matches</button>
 			<button id="myRatingsButton" class="mainButton">My Ratings</button>
 			<button id="myAccountButton" class="mainButton">My Account</button>
 		</div>
@@ -482,6 +482,10 @@
 			
 			<input id="signupSubmitButton" type="button" class="submitButton" value="Sign Up">
 		</form>
+		
+		<div id="submitRequestDiv">
+			
+		</div>
 		
 		<script>
 			(function init() {
@@ -532,6 +536,14 @@
 				
 				signupSubmitButton.addEventListener('click', function() {
 					window.location = 'index.html';
+				});
+			}
+			
+			function initSubmitRequest() {
+				var submitRequest = document.getElementById('submitRequest');
+				
+				submitRequest.addEventListener('click', function() {
+					
 				});
 			}
 		</script>
