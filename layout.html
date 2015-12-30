@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		
+		<link id="loginFormLink" rel="import" href="views/login-form.html">
+		<link id="signupFormLink" rel="import" href="views/signup-form.html">
+		<link id="calendarLink" rel="import" href="views/calendar.html">
+		<link id="allMatchesLink" rel="import" href="views/all-matches.html">
+	</head>
+
+	<body>
+		<div id="greyOut" class="greyOut hide"></div>
+		
+		<div class="nav">
+			<div id="logoImage">
+				Logo
+			</div>
+			<div id="loginDiv">
+				Log In
+			</div>
+			<div id="signupDiv">
+				Sign Up
+			</div>
+		</div>
+		
+		<div id="loginFormContainer"></div>
+		<div id="signupFormContainer"></div>
+		
+		<div id="viewArea">
+			<div id="calendarContainer"></div>
+			<div id="allMatchesContainer" class="hidden"></div>
+		</div>
+		
+		<div id="mainButtonsContainer">
+			<button id="allMatchesButton" class="mainButton">All Matches</button>
+			<button id="myRatingsButton" class="mainButton">My Ratings</button>
+			<button id="myAccountButton" class="mainButton">My Account</button>
+		</div>
+		
+		<div id="submitRequestDiv">
+			
+		</div>
+		
+		<script>
+			(function init() {
+				importLogin();
+				importSignup();
+				importCalendar();
+				importAllMatches();
+				
+				initLogo();
+				initLogin();
+				initSignup();
+				initAllMatches();
+			})();
+					
+			var greyOut = document.getElementById('greyOut');
+			var viewArea = document.getElementById('viewArea');
+			var viewAreaChildList = viewArea.childNodes;
+			
+			function importLogin() {
+				var link = document.getElementById('loginFormLink');
+				var importedDocument = link.import;
+				var rootNode = importedDocument.getElementById('loginFormRoot');
+				
+				var container = document.getElementById('loginFormContainer');
+				container.appendChild(rootNode);
+			}
+			
+			function importSignup() {
+				var link = document.getElementById('signupFormLink');
+				var importedDocument = link.import;
+				var rootNode = importedDocument.getElementById('signupFormRoot');
+				
+				var container = document.getElementById('signupFormContainer');
+				container.appendChild(rootNode);
+			}
+			
+			function importCalendar() {
+				var link = document.getElementById('calendarLink');
+				var importedDocument = link.import;
+				var rootNode = importedDocument.getElementById('calendarRoot');
+				
+				var container = document.getElementById('calendarContainer');
+				container.appendChild(rootNode);
+			}
+			
+			function importAllMatches() {
+				var link = document.getElementById('allMatchesLink');
+				var importedDocument = link.import;
+				var rootNode = importedDocument.getElementById('allMatchesRoot');
+				
+				var container = document.getElementById('allMatchesContainer');
+				container.appendChild(rootNode);
+			}
+			
+			function initLogo() {
+				var logoImage = document.getElementById('logoImage');
+				
+				logoImage.addEventListener('click', function() {
+					hideAllViewAreaViews();
+					
+					var calendarContainer = document.getElementById('calendarContainer');
+					calendarContainer.classList.remove('hidden');
+				});
+			}
+			
+			function initLogin() {
+				var loginDiv = document.getElementById('loginDiv');
+				var loginForm = document.getElementById('loginForm');
+				
+				loginDiv.addEventListener('click', function() {
+					if(loginForm.className.indexOf('hide') === -1) {
+						loginForm.className = loginForm.className.replace('show', 'hide');
+						greyOut.className = greyOut.className.replace('show', 'hide');
+					}
+					else {
+						loginForm.className = loginForm.className.replace('hide', 'show');
+						greyOut.className = greyOut.className.replace('hide', 'show');
+					}
+				});
+				
+				var loginSubmitButton = document.getElementById('loginSubmitButton');
+				
+				loginSubmitButton.addEventListener('click', function() {
+					window.location = 'index.html';
+				});
+			}
+			
+			function initSignup() {
+				var signupDiv = document.getElementById('signupDiv');
+				var signupForm = document.getElementById('signupForm');
+				
+				signupDiv.addEventListener('click', function() {
+					if(signupForm.className.indexOf('hide') === -1) {
+						signupForm.className = signupForm.className.replace('show', 'hide');
+						greyOut.className = greyOut.className.replace('show', 'hide');
+					}
+					else {
+						signupForm.className = signupForm.className.replace('hide', 'show');
+						greyOut.className = greyOut.className.replace('hide', 'show');
+					}
+				});
+				
+				var signupSubmitButton = document.getElementById('signupSubmitButton');
+				
+				signupSubmitButton.addEventListener('click', function() {
+					window.location = 'index.html';
+				});
+			}
+			
+			function initAllMatches() {
+				var allMatchesButton = document.getElementById('allMatchesButton');
+				
+				allMatchesButton.addEventListener('click', function() {
+					hideAllViewAreaViews();
+					
+					var allMatchesContainer = document.getElementById('allMatchesContainer');
+					allMatchesContainer.classList.remove('hidden');
+				});
+			}
+			
+			function initSubmitRequest() {
+				var submitRequest = document.getElementById('submitRequest');
+				
+				submitRequest.addEventListener('click', function() {
+					
+				});
+			}
+			
+			function hideAllViewAreaViews() {
+				for(var i=0, length=viewAreaChildList.length; i < length; i++) {
+					if (viewAreaChildList[i].nodeName.toLowerCase() === 'div') {
+						viewAreaChildList[i].classList.add('hidden');
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>
