@@ -3,18 +3,23 @@ body {
     margin: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .nav {
     height: 45px;
     white-space: nowrap;
     border: 1px solid black;
 }
 
-#logoImageContainer {
+#logoImage {
     display:inline-block;
     position: absolute;
     top: 2px;
     left: 10px;
     font-size: 2em;
+    cursor: pointer;
 }
 
 #loginDiv {
@@ -23,6 +28,11 @@ body {
     right: 100px;
     top: 15px;
     cursor: pointer;
+}
+
+#allMatchesContainer {
+    position: absolute;
+    top: 50%;
 }
 
 #signupDiv {
@@ -111,29 +121,26 @@ body {
     border: 1px solid black;
 }
 
-#calendar {
+#calendarContainer {
     position: absolute;
-    box-sizing: border-box;
-    width: 60%;
-    height: 500px;
-    border: solid 1px black;
     margin-left: auto;
     margin-right: auto;
     right: 0;
     left: 0;
     margin-top: 5%;
+    box-sizing: border-box;
+    width: 60%;
+    height: 500px;
+    border: solid 1px black;
     min-width: 750px;
 }
 
 #mainButtonsContainer {
+    text-align: center;
     position: absolute;
-    bottom: 100px;
-    /*bottom: 10%;
-    margin-left: auto;
-    margin-right: auto;
+    bottom: 50px;
+    left: 0;
     right: 0;
-    left: 0;*/
-    /*transform: translate(-50%, -50%);*/
 }
 
 .mainButton {
